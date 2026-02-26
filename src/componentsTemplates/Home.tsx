@@ -1,5 +1,39 @@
+import { useEffect } from "react";
+import { Collapse } from "bootstrap";
 
 function Home() {
+
+  useEffect(() => {
+
+    const navbarElement = document.getElementById("navbarResponsive");
+    if (!navbarElement) return;
+
+    const bsCollapse = new Collapse(navbarElement, { toggle: false });
+
+    const navLinks = document.querySelectorAll(
+      "#navbarResponsive .nav-link"
+    );
+
+    const handleClick = () => {
+      // Solo cerrar en mobile
+      if (window.innerWidth < 992) {
+        bsCollapse.hide();
+      }
+    };
+
+    navLinks.forEach(link =>
+      link.addEventListener("click", handleClick)
+    );
+
+    return () => {
+      navLinks.forEach(link =>
+        link.removeEventListener("click", handleClick)
+      );
+    };
+
+  }, []);
+
+
 
   return (
       <>
@@ -7,13 +41,13 @@ function Home() {
   {/* Navigation*/}
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a className="navbar-brand js-scroll-trigger" href="#page-top">
-      <span className="d-block d-lg-none">Clarence Taylor</span>
+      <span className="d-block d-lg-none">Javier Paz Zavalia</span>
       <span className="d-none d-lg-block"><img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
     </a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon" /></button>
     <div className="collapse navbar-collapse" id="navbarResponsive">
       <ul className="navbar-nav">
-        <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#about">Quien Soy</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#experience">Experiencia</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#education">Educacion</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#skills">Conocimientos</a></li>
@@ -33,14 +67,11 @@ function Home() {
         </h1>
         <div className="subheading mb-5">
           Pasaje Antartida Argentina 423 · Yerba Buena, CP 4107 · (54 381) 5707891 ·
-          <a href="mailto:javierpazzavalia@gmail.com">javierpazzavalia@gmail.com</a>
+          <a href="mailto:javier_pazz@hotmail.com">javier_pazz@hotmail.com</a>
         </div>
         <p className="lead mb-5">Ingeniero en Sistemas (FULL-STACK JS) con años de experiencia en Diseño y Desarrollo de Software, Actualmente Desarrollando Soluciones de Automatizacion con IA, superandome día a día, para hacer que las cosas funcionen bien, siendo fáciles e increíbles de usar!!!!!!.</p>
         <div className="social-icons">
-          <a className="social-icon" href="#!"><i className="fab fa-linkedin-in" /></a>
-          <a className="social-icon" href="#!"><i className="fab fa-github" /></a>
-          <a className="social-icon" href="#!"><i className="fab fa-twitter" /></a>
-          <a className="social-icon" href="#!"><i className="fab fa-facebook-f" /></a>
+          <a className="social-icon" href="https://www.linkedin.com/in/javier-paz-28000575/"><i className="fab fa-linkedin-in" /></a>
         </div>
       </div>
     </section>
@@ -142,7 +173,7 @@ function Home() {
         <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div className="flex-grow-1">
             {/* <h3 className="mb-0">Universidad Tecnológica Nacional, F.R.T.</h3> */}
-            <div className="subheading mb-3">ElS Center - C1 - Level</div>
+            <div className="subheading mb-3">ELS Language Centers - C1 Level</div>
             <div>- Santa Barbara - San Francisco -  Nueva York </div>
             {/* <p>GPA: 3.23</p> */}
           </div>
@@ -162,16 +193,36 @@ function Home() {
           <li className="list-inline-item"><i className="fab fa-html5" /></li>
           <li className="list-inline-item"><i className="fab fa-css3-alt" /></li>
           <li className="list-inline-item"><i className="fab fa-js-square" /></li>
-          <li className="list-inline-item"><i className="fab fa-angular" /></li>
           <li className="list-inline-item"><i className="fab fa-react" /></li>
           <li className="list-inline-item"><i className="fab fa-node-js" /></li>
-          <li className="list-inline-item"><i className="fab fa-sass" /></li>
-          <li className="list-inline-item"><i className="fab fa-less" /></li>
-          <li className="list-inline-item"><i className="fab fa-wordpress" /></li>
-          <li className="list-inline-item"><i className="fab fa-gulp" /></li>
-          <li className="list-inline-item"><i className="fab fa-grunt" /></li>
           <li className="list-inline-item"><i className="fab fa-npm" /></li>
-        </ul>
+
+  <li className="list-inline-item"><i className="devicon-nodejs-plain" title="Node.js"></i></li>
+  <li className="list-inline-item"><i className="devicon-jest-plain" title="Jest"></i></li>
+  <li className="list-inline-item"><i className="devicon-nextjs-original" title="Next.js"></i></li>
+  <li className="list-inline-item"><i className="devicon-nestjs-plain" title="NestJS"></i></li>
+
+  <li className="list-inline-item"><i className="devicon-typescript-plain" title="TypeScript"></i></li>
+  <li className="list-inline-item"><i className="devicon-prisma-original" title="Prisma"></i></li>
+  <li className="list-inline-item"><i className="devicon-graphql-plain" title="GraphQL"></i></li>
+  <li className="list-inline-item"><i className="devicon-mongodb-plain" title="MongoDB"></i></li>
+  <li className="list-inline-item"><i className="devicon-postgresql-plain" title="PostgreSQL"></i></li>
+
+  <li className="list-inline-item"><i className="devicon-amazonwebservices-original" title="AWS"></i></li>
+  <li className="list-inline-item"><i className="devicon-docker-plain" title="Docker"></i></li>
+
+  {/* Sin icono oficial → usamos genérico */}
+  <li className="list-inline-item"><i className="fas fa-network-wired" title="Microservices"></i></li>
+  <li className="list-inline-item"><i className="fas fa-envelope" title="Mailgun"></i></li>
+  <li className="list-inline-item"><i className="fas fa-image" title="Cloudinary"></i></li>
+  <li className="list-inline-item"><i className="fas fa-project-diagram" title="n8n"></i></li>
+  <li className="list-inline-item"><i className="fas fa-brain" title="LLM"></i></li>
+  <li className="list-inline-item"><i className="fas fa-lightbulb" title="Prompt Engineering"></i></li>
+  <li className="list-inline-item"><i className="fas fa-robot" title="Ollama"></i></li>
+  <li className="list-inline-item"><i className="fas fa-database" title="RAG"></i></li>
+  <li className="list-inline-item"><i className="fas fa-cogs" title="AI Agents"></i></li>
+
+</ul>
         <ul className="fa-ul mb-0">
           <li>
             <span className="fa-li"><i className="fas fa-check" /></span>
@@ -192,9 +243,9 @@ function Home() {
     {/* Interests*/}
     {/* <section className="resume-section" id="interests">
       <div className="resume-section-content">
-        <h2 className="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-        <p className="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+      <h2 className="mb-5">Interests</h2>
+      <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+      <p className="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
       </div>
     </section> */}
     <hr className="m-0" />
@@ -204,29 +255,48 @@ function Home() {
         <h2 className="mb-5">Clientes </h2>
         <ul className="fa-ul mb-0">
           <li>
-            Los Colorados SA - Produccion Agropecuaria
-          </li>
-          <li>
-            Grupo El Azul - Grupo empresario Agronegocios.
+            KUTLY INTERNACIONAL SA - Comercializadora y Exportadora de Legumbres y Limon
           </li>
           <li>
             Legumbres SACIFIA - Produccion y Exportacion Legumbres y Limon
           </li>
           <li>
-            KUTLY iNTERNACIONAL SA - Comercializadora y Exportadora Legumbres y Limon
+            Sanda SA - Produccion y Exportacion de Legumbres / Molino.
           </li>
           <li>
-            Azucarera Justiniano Frias Silva - Grupo empresario Agronegocios
+            La Teresina - Molino y Alimentos.
           </li>
           <li>
-            Sanda SA
+            Julio Pastorino - Agronegocios.
           </li>
           <li>
-            Juan Manuel Poviña - SYNAgro 
+            EL CARMEN S.A. - Produccion y Comercializacion Naranjas.
           </li>
           <li>
-            La Teresina - Molino y Alimentos
+            Ing. Otto Gramajo - Produccion y Comercializacion Azucar y Limon.
           </li>
+          <li>
+            AZUCARERA CONCEPCIÓN S.A. - Produccion y Comercializacion Azucar.
+          </li>
+          <li>
+            S.A. AZUCARERA J. FRIAS - Agronegocios.
+          </li>
+          <li>
+            LA DONOSA SA - Produccion y Exportacion de Limon.
+          </li>
+          <li>
+            Juan Manuel Poviña - SYNAgro.
+          </li>
+          <li>
+            Grupo El Azul - Grupo empresario Agronegocios.
+          </li>
+          <li>
+            Los Colorados SA - Produccion Agropecuaria.
+          </li>
+
+
+
+
 
         </ul>
       </div>
