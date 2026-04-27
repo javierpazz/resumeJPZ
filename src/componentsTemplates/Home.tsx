@@ -49,6 +49,7 @@ function Home() {
       <ul className="navbar-nav">
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#about">Quien Soy</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#experience">Experiencia</a></li>
+        <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#appdisp">Apps en Produccion</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#education">Educacion</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#skills">Conocimientos</a></li>
         <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#interests">Interes</a></li>
@@ -147,6 +148,51 @@ function Home() {
 
       </div>
     </section>
+
+    {/* appdisp*/}
+    <section className="resume-section" id="appdisp">
+      <div className="resume-section-content">
+        <h2 className="mb-5">Apps en Produccion</h2>
+        <div className="d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div className="flex-grow-1">
+            <h3 className="mb-0"></h3>
+            <div className="subheading mb-3">Soluciones Cloud</div>
+            <p>- Ecommerce.
+<br />- Facturación ERP CRM.
+<br />- Gestión Empresas de Transporte / Logistica.
+<br />- Gestión Empresas de Servicios a Terceros.
+<br />- Gestión Empresas de Servicios post Venta.
+<br />- Gestión Empresas Produccion Agropecuaria.
+<br />- Gestión Empresas Servicios a Produccion Agropecuaria.
+<br />- Gestión Empresas Constructora.
+<br />- Gestión Escribania.
+            </p>
+
+
+          </div>
+          <div className="flex-shrink-0">
+            <span className="text-primary">Tecnologias</span>
+               <p>- Frontend - ReactJS - NextJS.
+            <br />- Backend - NestJS - Prisma - Postgres DB.
+            <br />- Backend - NestJS - Prisma - Postgres DB.
+            </p>
+
+            <span className="text-primary">Uso</span>
+
+               <p>- App Listas para Trabajar una vez dado de alta.
+            <br />- Sin necesidad de Capacitacion, de uso Instituivo.
+            <br />- Facil y rapida Implementacion.
+            </p>
+            
+            
+            </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
     <hr className="m-0" />
     {/* Education*/}
     <section className="resume-section" id="education">
