@@ -174,7 +174,6 @@ function Home() {
             <span className="text-primary">Tecnologias</span>
                <p>- Frontend - ReactJS - NextJS.
             <br />- Backend - NestJS - Prisma - Postgres DB.
-            <br />- Backend - NestJS - Prisma - Postgres DB.
             </p>
 
             <span className="text-primary">Uso</span>
